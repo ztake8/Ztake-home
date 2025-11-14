@@ -21,7 +21,7 @@ export default function Contact() {
             <GlassCard className="p-8 text-center">
               <Mail className="w-12 h-12 mx-auto mb-4 text-primary" />
               <h3 className="text-xl font-bold mb-2">Sales</h3>
-              <p className="text-muted-foreground">sale@ztake.in</p>
+              <p className="text-muted-foreground">sales@ztake.in</p>
             </GlassCard>
             <GlassCard className="p-8 text-center">
               <Phone className="w-12 h-12 mx-auto mb-4 text-primary" />
