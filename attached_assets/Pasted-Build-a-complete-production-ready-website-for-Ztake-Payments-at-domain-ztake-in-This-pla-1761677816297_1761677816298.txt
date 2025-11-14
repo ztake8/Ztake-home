@@ -1,0 +1,264 @@
+Build a complete, production-ready website for **Ztake Payments** at domain **ztake.in**.  
+This platform is a modern payment and fintech ecosystem inspired by **Razorpay + Stripe**, designed for Indian and international businesses.  
+
+The website must be **Apple-inspired**, visually resembling the **iPhone liquid glass aesthetic** — minimal, fluid, premium, and immersive.
+
+---
+
+### 🎨 DESIGN LANGUAGE — Apple iPhone Liquid Glass Theme
+
+- Use a **liquid glass UI** throughout the site: soft frosted-glass cards with backdrop blur, gentle white glow edges, and subtle reflection highlights.  
+- Add **depth using transparency + layering**. Cards and sections should look like floating translucent glass panes over softly blurred gradients.  
+- **Animations**: micro springy interactions, parallax hero scroll, smooth opacity transitions, and gentle scale effects. Use **Framer Motion** or CSS transitions.  
+- **Typography**: Apple-style sans-serif — use system font stack (`-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial`).  
+- **Colors**:  
+  - Light mode — white, silvers, light greys with blue/indigo accents (#3B82F6 or #2563EB).  
+  - Dark mode — deep charcoal/black glass with glowing white text and neon indigo highlights.  
+- **Layout**: rounded corners (2xl radius), large padding, floating nav bar with blur, and pill-shaped CTAs.  
+- **Responsive**: mobile-first (optimized for iPhone 13–15), adaptive layouts for tablet and desktop.  
+- **Bottom nav on mobile** like iOS apps (Dashboard, Payments, Invoices, Support).  
+- **Accessibility**: 4.5:1 contrast ratio, reduced motion option, and proper ARIA labels.
+
+---
+
+### ⚙️ TECHNICAL SPECS
+
+- **Frontend**: Next.js + React, Tailwind CSS, Framer Motion animations.  
+- **Backend**: Node.js (Express/Nest) or Python (FastAPI).  
+- **Database**: PostgreSQL.  
+- **Caching & Queues**: Redis.  
+- **Deployment**: Vercel for frontend, AWS or GCP for backend APIs.  
+- **Docs**: auto-generated from OpenAPI spec with interactive API playground.  
+- **SEO**: SSR pages, sitemap.xml, structured data.  
+- **Analytics**: GA4 + server-side events.
+
+---
+
+### 🧭 COMPLETE SITE MAP (Page-by-Page Summary)
+
+Each page should follow the Apple-style design system and use glass effects consistently.
+
+---
+
+#### 🏠 HOME PAGE `/`
+- Hero: Animated glass hero with tagline “Empowering Modern Businesses to Get Paid — Instantly.”
+- Features: floating glass cards (Payment Gateway, Banking, Subscriptions, APIs).
+- Call-to-Action: “Create Account” + “View Demo”.
+- Floating metrics section (volume processed, merchants onboarded).
+- Footer with translucent gradient background.
+
+---
+
+#### 💳 PAYMENTS `/payments/`
+- Overview of all payment solutions.
+- Glass feature grid: “Checkout”, “Links”, “Pages”, “UPI”, “International”.
+- CTA to “Start Accepting Payments”.
+
+##### `/payments/checkout/`
+- Smart checkout demo section with interactive mock checkout.
+- Floating 3D glass card showing payment flow.
+- Tabs for Card, UPI, Wallet.
+
+##### `/payments/payment-links/`
+- Explain creating shareable links.
+- Demo input box showing dynamic short links with animation.
+
+##### `/payments/payment-pages/`
+- Visual builder (drag-and-drop style mockup).
+- Animated mock storefront within a frosted panel.
+
+##### `/payments/payment-buttons/`
+- Button generator demo (copy code snippet).
+- Glass editor modal with customization preview.
+
+##### `/payments/upi/`
+- UPI Autopay + collect requests.
+- Illustrate UPI intent and QR workflows with glass overlays.
+
+##### `/payments/international/`
+- Multi-currency, FX rates, compliance badges.
+- Map with glowing markers.
+
+---
+
+#### 🧾 SUBSCRIPTIONS `/subscriptions/`
+- Manage recurring and metered billing.
+- Glass plan cards showing dynamic metrics.
+- Customer portal mockup.
+
+---
+
+#### 💼 CAPITAL `/capital/`
+- Cash advance, instant settlements.
+- Animated balance widget in a glass vault card.
+
+##### `/capital/instant-settlements/`
+- Settlement timeline slider animation with glowing timeline dots.
+
+##### `/capital/cash-advance/`
+- Eligibility calculator in glass card interface.
+
+---
+
+#### 🏦 ZTAKE X (Business Banking) `/ztakex/`
+- Intro to ZtakeX (banking + payouts).
+- Glass banking dashboard preview.
+- Tabs: “Payouts”, “Corporate Cards”, “Accounting Integrations”.
+
+##### `/ztakex/payouts/`
+- Real-time payout demo animation.
+- Glass transaction feed with shimmer effect.
+
+##### `/ztakex/corporate-cards/`
+- Virtual card showcase on glass pane.
+- Glow effects on hover.
+
+##### `/ztakex/accounting-payouts/`
+- Integrations (Tally, QuickBooks).
+- Animated “Sync Now” button on glass UI.
+
+---
+
+#### 🧑‍💻 DEVELOPERS `/docs/`
+- Hero with “Built for Developers.”
+- Interactive API explorer (dark glass terminal style).
+- SDK downloads (JS, iOS, Android).
+- Sidebar navigation on frosted panel.
+
+##### `/docs/payments/`
+##### `/docs/api-reference/`
+##### `/docs/webhooks/`
+- Include example responses and curl commands in code glass blocks.
+
+---
+
+#### 💰 PRICING `/pricing/`
+- 3-tier glass pricing cards (Starter / Growth / Enterprise).
+- Hover reveals with reflections.
+- Enterprise inquiry form in glass modal.
+
+---
+
+#### 🏢 ENTERPRISE SOLUTIONS `/solutions/`
+- Hero: “Custom Payments Infrastructure for Modern Enterprises.”
+- Subpages:
+  - `/solutions/ecommerce/`
+  - `/solutions/saas/`
+  - `/solutions/education/`
+  - `/solutions/bfsi/`
+
+Each with animated hero gradients and business-type mockups.
+
+---
+
+#### 📚 RESOURCES `/resources/`
+- Blog grid of glass cards.
+- `/case-studies/` – interactive story cards.
+- `/ebooks/` – downloadable guides.
+- `/events/` – webinars & meetups section.
+
+---
+
+#### 🧠 SUPPORT `/support/`
+- Floating help chatbot (AI-assist bubble).
+- Tabs for Payments, Banking, POS.
+- `/support/payments/`
+- `/support/ztakex/`
+- `/support/pos/`
+
+---
+
+#### 🔒 SECURITY & LEGAL
+- `/security/` — PCI-DSS & encryption visuals.
+- `/privacy/`, `/terms/`, `/agreement/`, `/responsible-disclosure/`.
+
+Each page in minimal clean layout with translucent header bar.
+
+---
+
+#### 🧍‍♂️ COMPANY `/about/`
+- Team + leadership glass cards.
+- Timeline of Ztake milestones in parallax scroll.
+- `/careers/` — Glass job cards with “Apply Now” modals.
+
+---
+
+#### 🤝 PARTNERS `/partners/`
+- Marketplace integrations: Shopify, WooCommerce, Zapier.
+- Animated connector lines between logos on glass map.
+
+---
+
+#### 📞 CONTACT `/contact/`
+- Glass contact form with map background blur.
+- “Talk to Sales” and “Support” quick links.
+
+---
+
+#### 🧰 DASHBOARD `/dashboard/`
+- Merchant view mockup: transactions list, settlements chart, disputes.
+- Blur-glass sidebar navigation.
+- Only a design showcase for marketing site (not functional).
+
+---
+
+### 🧩 ADDITIONAL COMPONENTS
+
+- **Floating NavBar**: translucent with blur & glass reflection on scroll.  
+- **Footer**: minimal gradient with subtle glass edges and fading reflection.  
+- **Buttons**: glowing pill-shaped buttons with hover reflections.  
+- **Cards**: reusable `GlassCard` component for all UI blocks.  
+- **Animations**:  
+  - Glass morphing effects on hover  
+  - Smooth fade on section scroll  
+  - Tilt + parallax on hero images  
+
+---
+
+### ⚡ FUNCTIONAL FEATURES SUMMARY
+Include these sections in marketing copy & demos:
+- Hosted Checkout with saved cards, UPI, netbanking.
+- Payment Links & Pages.
+- Subscription Billing with Dunning logic.
+- Payouts, Corporate Cards, Accounting Sync.
+- Developer API & Webhooks Sandbox.
+- Smart Routing & Fraud Detection (demo).
+- Merchant Dashboard Mockup.
+- Enterprise-ready SLA + support info.
+
+---
+
+### 🧩 PERFORMANCE & SEO
+- Optimize for 90+ Lighthouse scores.
+- Preload hero images, lazy-load animations.
+- Use Next.js image optimization.
+- Include meta tags, OpenGraph previews, and JSON-LD schema for all major pages.
+
+---
+
+### 📦 DELIVERABLES
+1. Fully built responsive website with all pages and design elements.  
+2. Ready-to-deploy Next.js repo.  
+3. Component library for Glass UI.  
+4. OpenAPI docs integration for developer pages.  
+5. Figma design file and brand guide (fonts, colors, glass tokens).  
+6. Sitemap.xml + robots.txt + SEO metadata.  
+
+---
+
+### 📣 CONTENT STYLE
+All copy must be **original**, concise, and confident — in the voice of a tech-forward fintech brand (Ztake).  
+Tone: Empowering, transparent, trustworthy.  
+Use simple, human, and confident microcopy:  
+Examples:  
+- “Start Accepting Payments Instantly”  
+- “Power your business with modern payments.”  
+- “Built for developers. Loved by businesses.”  
+
+---
+
+### 🚀 FINAL NOTE
+Create a **complete Apple-style, glass UI fintech website** for **Ztake Payments (ztake.in)**  
+combining the **features of Razorpay + Stripe**,  
+and the **design finesse of iOS** — smooth, translucent, elegant, and lightning fast.  
+Generate all pages above, consistent animations, and cohesive theme across the entire site.

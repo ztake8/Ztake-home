@@ -1,0 +1,289 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* LIGHT MODE */
+:root {
+  --button-outline: rgba(0, 0, 0, 0.1);
+  --badge-outline: rgba(0, 0, 0, 0.05);
+
+  /* Automatic computation of border around primary / danger buttons */
+  --opaque-button-border-intensity: -8; /* In terms of percentages */
+
+  /* Enhanced glassmorphism backgrounds for Apple-style liquid glass effect */
+  --elevate-1: rgba(0, 0, 0, 0.02);
+  --elevate-2: rgba(0, 0, 0, 0.05);
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.3);
+  --glass-shadow: rgba(0, 0, 0, 0.1);
+
+  --background: 0 0% 100%;
+  --foreground: 222 15% 12%;
+  --border: 220 8% 88%;
+  /* Updated card colors for better glass effect */
+  --card: 0 0% 100%;
+  --card-foreground: 222 15% 12%;
+  --card-border: 220 6% 95%;
+  --sidebar: 220 5% 98%;
+  --sidebar-foreground: 222 15% 12%;
+  --sidebar-border: 220 6% 93%;
+  --sidebar-primary: 221 83% 53%;
+  --sidebar-primary-foreground: 210 40% 98%;
+  --sidebar-accent: 220 8% 94%;
+  --sidebar-accent-foreground: 222 15% 12%;
+  --sidebar-ring: 221 83% 53%;
+  --popover: 0 0% 98%;
+  --popover-foreground: 222 15% 12%;
+  --popover-border: 220 6% 92%;
+  --primary: 221 83% 53%;
+  --primary-foreground: 210 40% 98%;
+  --secondary: 220 8% 92%;
+  --secondary-foreground: 222 15% 12%;
+  --muted: 220 10% 96%;
+  --muted-foreground: 222 12% 35%;
+  --accent: 220 12% 94%;
+  --accent-foreground: 222 15% 12%;
+  --destructive: 0 72% 51%;
+  --destructive-foreground: 0 0% 98%;
+  --input: 220 10% 75%;
+  --ring: 221 83% 53%;
+  --chart-1: 221 83% 45%;
+  --chart-2: 262 83% 58%;
+  --chart-3: 291 64% 42%;
+  --chart-4: 339 76% 54%;
+  --chart-5: 15 86% 55%;
+
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-serif: Georgia, serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  /* Increased border radius for more rounded Apple-style corners */
+  --radius: 1.25rem;
+  /* Enhanced shadows for depth and glass effect */
+  --shadow-2xs: 0px 1px 2px 0px hsl(220 15% 25% / 0.04);
+  --shadow-xs: 0px 2px 4px 0px hsl(220 15% 25% / 0.06);
+  --shadow-sm: 0px 4px 8px -2px hsl(220 15% 25% / 0.08), 0px 2px 4px -2px hsl(220 15% 25% / 0.06);
+  --shadow: 0px 8px 16px -4px hsl(220 15% 25% / 0.1), 0px 4px 8px -4px hsl(220 15% 25% / 0.08);
+  --shadow-md: 0px 12px 24px -6px hsl(220 15% 25% / 0.12), 0px 6px 12px -6px hsl(220 15% 25% / 0.1);
+  --shadow-lg: 0px 20px 40px -8px hsl(220 15% 25% / 0.14), 0px 8px 16px -8px hsl(220 15% 25% / 0.08);
+  --shadow-xl: 0px 30px 60px -12px hsl(220 15% 25% / 0.16), 0px 12px 24px -12px hsl(220 15% 25% / 0.1);
+  --shadow-2xl: 0px 40px 80px -16px hsl(220 15% 25% / 0.2);
+  --tracking-normal: 0em;
+  --spacing: 0.25rem;
+
+  /* Automatically computed borders - intensity can be controlled by the user by the --opaque-button-border-intensity setting */
+  --sidebar-primary-border: hsl(var(--sidebar-primary));
+  --sidebar-primary-border: hsl(
+    from hsl(var(--sidebar-primary)) h s calc(l + var(--opaque-button-border-intensity)) /
+    alpha
+  );
+
+  --sidebar-accent-border: hsl(var(--sidebar-accent));
+  --sidebar-accent-border: hsl(
+    from hsl(var(--sidebar-accent)) h s calc(l + var(--opaque-button-border-intensity)) /
+    alpha
+  );
+
+  --primary-border: hsl(var(--primary));
+  --primary-border: hsl(from hsl(var(--primary)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+
+  --secondary-border: hsl(var(--secondary));
+  --secondary-border: hsl(from hsl(var(--secondary)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+
+  --muted-border: hsl(var(--muted));
+  --muted-border: hsl(from hsl(var(--muted)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+
+  --accent-border: hsl(var(--accent));
+  --accent-border: hsl(from hsl(var(--accent)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+
+  --destructive-border: hsl(var(--destructive));
+  --destructive-border: hsl(from hsl(var(--destructive)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+}
+
+.dark {
+  --button-outline: rgba(255, 255, 255, 0.1);
+  --badge-outline: rgba(255, 255, 255, 0.05);
+
+  --opaque-button-border-intensity: 9;
+
+  /* Enhanced dark mode glassmorphism backgrounds */
+  --elevate-1: rgba(255, 255, 255, 0.03);
+  --elevate-2: rgba(255, 255, 255, 0.06);
+  --glass-bg: rgba(30, 30, 35, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.15);
+  --glass-shadow: rgba(0, 0, 0, 0.3);
+
+  --background: 222 15% 8%;
+  --foreground: 210 40% 98%;
+  --border: 222 12% 18%;
+  /* Updated dark mode card colors for glass effect */
+  --card: 222 14% 12%;
+  --card-foreground: 210 40% 98%;
+  --card-border: 222 12% 16%;
+  --sidebar: 222 13% 14%;
+  --sidebar-foreground: 210 40% 98%;
+  --sidebar-border: 222 12% 18%;
+  --sidebar-primary: 221 83% 53%;
+  --sidebar-primary-foreground: 210 40% 98%;
+  --sidebar-accent: 222 12% 18%;
+  --sidebar-accent-foreground: 210 40% 98%;
+  --sidebar-ring: 221 83% 53%;
+  --popover: 222 13% 16%;
+  --popover-foreground: 210 40% 98%;
+  --popover-border: 222 12% 20%;
+  --primary: 221 83% 53%;
+  --primary-foreground: 210 40% 98%;
+  --secondary: 222 12% 20%;
+  --secondary-foreground: 210 40% 98%;
+  --muted: 222 12% 18%;
+  --muted-foreground: 215 20% 65%;
+  --accent: 222 14% 19%;
+  --accent-foreground: 210 40% 98%;
+  --destructive: 0 72% 51%;
+  --destructive-foreground: 210 40% 98%;
+  --input: 222 12% 28%;
+  --ring: 221 83% 53%;
+  --chart-1: 221 83% 65%;
+  --chart-2: 262 83% 70%;
+  --chart-3: 291 64% 62%;
+  --chart-4: 339 76% 68%;
+  --chart-5: 15 86% 65%;
+
+  /* Enhanced dark mode shadows for depth */
+  --shadow-2xs: 0px 1px 2px 0px hsl(0 0% 0% / 0.4);
+  --shadow-xs: 0px 2px 4px 0px hsl(0 0% 0% / 0.5);
+  --shadow-sm: 0px 4px 8px -2px hsl(0 0% 0% / 0.45), 0px 2px 4px -2px hsl(0 0% 0% / 0.5);
+  --shadow: 0px 8px 16px -4px hsl(0 0% 0% / 0.5), 0px 4px 8px -4px hsl(0 0% 0% / 0.45);
+  --shadow-md: 0px 12px 24px -6px hsl(0 0% 0% / 0.55), 0px 6px 12px -6px hsl(0 0% 0% / 0.5);
+  --shadow-lg: 0px 20px 40px -8px hsl(0 0% 0% / 0.6), 0px 8px 16px -8px hsl(0 0% 0% / 0.45);
+  --shadow-xl: 0px 30px 60px -12px hsl(0 0% 0% / 0.65), 0px 12px 24px -12px hsl(0 0% 0% / 0.5);
+  --shadow-2xl: 0px 40px 80px -16px hsl(0 0% 0% / 0.7);
+
+  --sidebar-primary-border: hsl(var(--sidebar-primary));
+  --sidebar-primary-border: hsl(
+    from hsl(var(--sidebar-primary)) h s calc(l + var(--opaque-button-border-intensity)) /
+    alpha
+  );
+
+  --sidebar-accent-border: hsl(var(--sidebar-accent));
+  --sidebar-accent-border: hsl(
+    from hsl(var(--sidebar-accent)) h s calc(l + var(--opaque-button-border-intensity)) /
+    alpha
+  );
+
+  --primary-border: hsl(var(--primary));
+  --primary-border: hsl(from hsl(var(--primary)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+
+  --secondary-border: hsl(var(--secondary));
+  --secondary-border: hsl(from hsl(var(--secondary)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+
+  --muted-border: hsl(var(--muted));
+  --muted-border: hsl(from hsl(var(--muted)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+
+  --accent-border: hsl(var(--accent));
+  --accent-border: hsl(from hsl(var(--accent)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+
+  --destructive-border: hsl(var(--destructive));
+  --destructive-border: hsl(from hsl(var(--destructive)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+}
+
+@layer utilities {
+  input[type="search"]::-webkit-search-cancel-button {
+    @apply hidden;
+  }
+
+  [contenteditable][data-placeholder]:empty::before {
+    content: attr(data-placeholder);
+    color: hsl(var(--muted-foreground));
+    pointer-events: none;
+  }
+
+  .no-default-hover-elevate {
+  }
+  .no-default-active-elevate {
+  }
+
+  .toggle-elevate::before,
+  .toggle-elevate-2::before {
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    inset: 0px;
+    border-radius: inherit;
+    z-index: -1;
+  }
+
+  .toggle-elevate.toggle-elevated::before {
+    background-color: var(--elevate-2);
+  }
+
+  .border.toggle-elevate::before {
+    inset: -1px;
+  }
+
+  .hover-elevate:not(.no-default-hover-elevate),
+  .active-elevate:not(.no-default-active-elevate),
+  .hover-elevate-2:not(.no-default-hover-elevate),
+  .active-elevate-2:not(.no-default-active-elevate) {
+    position: relative;
+    z-index: 0;
+  }
+
+  .hover-elevate:not(.no-default-hover-elevate)::after,
+  .active-elevate:not(.no-default-active-elevate)::after,
+  .hover-elevate-2:not(.no-default-hover-elevate)::after,
+  .active-elevate-2:not(.no-default-active-elevate)::after {
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    inset: 0px;
+    border-radius: inherit;
+    z-index: 999;
+  }
+
+  .hover-elevate:hover:not(.no-default-hover-elevate)::after,
+  .active-elevate:active:not(.no-default-active-elevate)::after {
+    background-color: var(--elevate-1);
+  }
+
+  .hover-elevate-2:hover:not(.no-default-hover-elevate)::after,
+  .active-elevate-2:active:not(.no-default-active-elevate)::after {
+    background-color: var(--elevate-2);
+  }
+
+  .border.hover-elevate:not(.no-hover-interaction-elevate)::after,
+  .border.active-elevate:not(.no-active-interaction-elevate)::after,
+  .border.hover-elevate-2:not(.no-hover-interaction-elevate)::after,
+  .border.active-elevate-2:not(.no-active-interaction-elevate)::after,
+  .border.hover-elevate:not(.no-hover-interaction-elevate)::after {
+    inset: -1px;
+  }
+
+  /* Added Apple-style glassmorphism utility classes */
+  .glass-effect {
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+  }
+
+  .glass-effect-strong {
+    backdrop-filter: blur(40px) saturate(200%);
+    -webkit-backdrop-filter: blur(40px) saturate(200%);
+  }
+
+  .glass-border {
+    border: 1px solid rgba(255, 255, 255, 0.18);
+  }
+
+  .dark .glass-border {
+    border: 1px solid rgba(255, 255, 255, 0.12);
+  }
+}
