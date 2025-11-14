@@ -35,7 +35,7 @@ export default function Resources() {
               <p className="text-muted-foreground mb-4">
                 Video tutorials for quick learning
               </p>
-              <a href="#" className="text-primary font-semibold hover:underline">
+              <a href="#" className="text-primary font-semibold hover:blink">
                 Watch Videos →
               </a>
             </GlassCard>
@@ -46,7 +46,7 @@ export default function Resources() {
               <p className="text-muted-foreground mb-4">
                 Industry insights and payment trends
               </p>
-              <a href="#" className="text-primary font-semibold hover:underline">
+              <a href="#" className="text-primary font-semibold hover:blink">
                 Read Blog →
               </a>
             </GlassCard>
