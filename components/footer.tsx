@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Github, Twitter, Linkedin, Mail } from 'lucide-react'
+import { Twitter, Linkedin, Mail } from 'lucide-react'
 import Image from "next/image"
 
 const footerSections = [
