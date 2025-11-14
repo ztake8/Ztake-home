@@ -1,5 +1,5 @@
 import { Link } from "wouter"
-import { Github, Twitter, Linkedin, Mail } from "lucide-react"
+import { Twitter, Linkedin, Mail } from "lucide-react"
 
 const footerSections = [
   {
