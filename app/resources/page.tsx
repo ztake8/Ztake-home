@@ -24,7 +24,7 @@ export default function Resources() {
               <p className="text-muted-foreground mb-4">
                 Step-by-step integration guides and best practices
               </p>
-              <a href="#" className="text-primary font-semibold hover:underline">
+              <a href="#" className="text-primary font-semibold hover:blink">
                 Read Guides →
               </a>
             </GlassCard>
