@@ -2,55 +2,68 @@ import { NextResponse } from "next/server";
 
 export const runtime = "edge";
 
-// 📌 SYSTEM PROMPT (Ztake Payments Expert)
 const systemPrompt = `
-You are Ztake AI Assistant — a payments, UPI, and API integration expert.
-You help users with:
-• PG Collections (UPI, QR, Collect)
-• Virtual Accounts (Auto Reconciliation)
-• Payouts (IMPS/NEFT/UPI)
-• API keys, webhook setup, settlements
-• Integration best practices
-• Troubleshooting errors
-• Explaining docs.ztake.in content
-
-Always reply with clean formatting, examples, and code when useful.
+You are Ztake AI Assistant — a payments expert for UPI, PG, payouts and API integrations.
+Give clean structured answers with examples.
 `;
 
 export async function POST(req: Request) {
-  const { message } = await req.json();
+  try {
+    const body = await req.json();
+    const userMessage = body.message;
 
-  if (!process.env.GROQ_API_KEY) {
+    // Validate
+    if (!userMessage || typeof userMessage !== "string") {
+      return NextResponse.json(
+        { error: "Missing 'message' string in request body" },
+        { status: 400 }
+      );
+    }
+
+    if (!process.env.GROQ_API_KEY) {
+      return NextResponse.json(
+        { error: "GROQ_API_KEY missing in Vercel environment" },
+        { status: 500 }
+      );
+    }
+
+    // Send to Groq
+    const groqRes = await fetch(
+      "https://api.groq.com/openai/v1/chat/completions",
+      {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${process.env.GROQ_API_KEY}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          model: "llama3-70b",
+          stream: true,
+          messages: [
+            { role: "system", content: systemPrompt },
+            { role: "user", content: userMessage }
+          ],
+        }),
+      }
+    );
+
+    if (!groqRes.ok) {
+      const errorText = await groqRes.text();
+      return NextResponse.json(
+        { error: `Groq request failed: ${errorText}` },
+        { status: 500 }
+      );
+    }
+
+    return new Response(groqRes.body, {
+      headers: {
+        "Content-Type": "text/event-stream",
+      },
+    });
+  } catch (err: any) {
     return NextResponse.json(
-      { error: "GROQ_API_KEY not set in Vercel environment" },
+      { error: err.message || "Unknown error" },
       { status: 500 }
     );
   }
-
-  // Call GROQ instead of OpenAI (free)
-  const groqRes = await fetch(
-    "https://api.groq.com/openai/v1/chat/completions",
-    {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${process.env.GROQ_API_KEY}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        model: "llama3-70b-8192", // FREE powerful model
-        stream: true,
-        temperature: 0.3,
-        messages: [
-          { role: "system", content: systemPrompt },
-          { role: "user", content: message },
-        ],
-      }),
-    }
-  );
-
-  return new Response(groqRes.body, {
-    headers: {
-      "Content-Type": "text/event-stream",
-    },
-  });
 }
